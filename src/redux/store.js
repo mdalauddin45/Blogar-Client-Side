@@ -1,5 +1,5 @@
 import { createStore } from "redux";
 
-const store = createStore(reducer);
+const store = createStore((state = {}) => state);
 
 export default store;
