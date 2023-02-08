@@ -5,10 +5,13 @@ const initialstate = {
 };
 
 const blogReducer = (state = initialstate, action) => {
-
+  const selectedBlog = state.history.find((blog) => blog._id === action.payload._id);
 
   switch (action.type) {
     case ADD_CONTENT:
+      if (selectedBlog) {
+        return state
+      }
       return {
         ...state,
         history: [...state.history, action.payload]
@@ -16,7 +19,7 @@ const blogReducer = (state = initialstate, action) => {
     case DELETE_CONTENT:
       return {
         ...state,
-        history: state.history.filter((blog) => blog.id !== action.payload)
+        history: state.history.filter((blog) => blog._id !== action.payload._id)
       }
   }
 
