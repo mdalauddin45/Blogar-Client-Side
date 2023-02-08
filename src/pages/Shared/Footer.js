@@ -20,9 +20,7 @@ const Footer = () => {
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase dark:text-gray-50">
-              Product
-            </h3>
+            <h3 className="tracking-wide uppercase ">Product</h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
@@ -47,9 +45,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase dark:text-gray-50">
-              Company
-            </h3>
+            <h3 className="tracking-wide uppercase ">Company</h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
@@ -64,7 +60,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="uppercase dark:text-gray-50">Developers</h3>
+            <h3 className="uppercase ">Developers</h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
@@ -84,7 +80,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <div className="uppercase dark:text-gray-50">Social media</div>
+            <div className="uppercase ">Social media</div>
             <div className="flex justify-start space-x-3">
               <a
                 rel="noopener noreferrer"
