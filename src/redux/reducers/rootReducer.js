@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import blogReducer from "./blogReducer";
-import filterReducer from "./filterReducer";
+import { filterReducer } from "./filterReducer";
+
 
 const rootReducer = combineReducers({
     history: blogReducer,
