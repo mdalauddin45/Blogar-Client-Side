@@ -52,7 +52,7 @@ const BlogCart = ({ blog }) => {
       <div className='flex gap-2 mt-5'>
         {!pathname.includes("cart") && (
           <button
-            onClick={() => dispatch({ type: ADD_CONTENT, payload: blog })}
+            onClick={() => dispatch(addContent(blog))}
             className='bg-red-500 rounded-full py-1 px-2 flex-1 text-white text-bold'
           >
             Reading History
