@@ -7,7 +7,9 @@ function App() {
   return (
     <div className="max-w-[1440px] mx-auto">
       <Provider store={store}>
+        {/* state provider */}
         <RouterProvider router={routes} />
+  
       </Provider>
     </div>
   );

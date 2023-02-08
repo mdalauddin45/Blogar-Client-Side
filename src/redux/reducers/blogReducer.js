@@ -1,4 +1,6 @@
-const initialstate = {};
+const initialstate = {
+  blogs: "BLOGS",
+};
 
 const blogReducer = (state = initialstate, action) => {
   return state;

@@ -1,5 +1,6 @@
 import { createStore } from "redux";
+import blogReducer from "./reducers/blogReducer";
 
-const store = createStore((state = {}) => state);
+const store = createStore(blogReducer);
 
 export default store;
