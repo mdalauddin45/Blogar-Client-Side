@@ -1,29 +1,42 @@
-import { TOGGLE_FIRST, TOGGLE_LAST } from "../actionTypes/actionTypes"
+import { TOGGLE_BRAND, TOGGLE_STOCK } from "../actionTypes/actionTypes"
 
 export const initialstate = {
     filters: {
-        lastUploaded: [],
-        firstUploaded: false,
+        brands: [],
+        stock: false
     },
-    keyboard: ""
+    keyword: ""
 }
 
 const filterReducer = (state = initialstate, action) => {
     switch (action.type) {
-        case TOGGLE_FIRST:
-            return {
-                ...state,
-                filters: {
-                    ...state.filters,
-                    firstUploaded: [...state.filters.firstUploaded, action.payload]
+
+        case TOGGLE_BRAND:
+            if (!state.filters.brands.includes(action.payload)) {
+                return {
+                    ...state,
+                    filters: {
+                        ...state.filters,
+                        brands: [...state.filters.brands, action.payload]
+                    }
                 }
             }
-        case TOGGLE_LAST:
+            else {
+                return {
+                    ...state,
+                    filters: {
+                        ...state.filters,
+                        brands: state.filters.brands.filter((brand) => brand !== action.payload)
+                    }
+                }
+            }
+
+        case TOGGLE_STOCK:
             return {
                 ...state,
                 filters: {
                     ...state.filters,
-                    lastUploaded: [...state.filters.lastUploaded, action.payload]
+                    stock: !state.filters.stock
                 }
             }
         default:
