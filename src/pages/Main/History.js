@@ -4,7 +4,9 @@ import BlogCart from '../../components/BlogCart';
 
 const History = () => {
 
-    const history = useSelector(state => state.history);
+    const historis = useSelector(state => state.history);
+    // console.log(historis);
+    const history = historis?.history;
 
 
     return (
@@ -13,7 +15,7 @@ const History = () => {
           history sorted by date up to down
            */}
             {
-                history?.sort((a, b) => b.date - a.date).map((blog, uxi) => (
+                history?.sort((a, b) => b.date - a.date)?.map((blog, uxi) => (
                     <BlogCart key={uxi} blog={blog} />
                 ))
 
