@@ -14,7 +14,10 @@ const blogReducer = (state = initialstate, action) => {
         history: [...state.history, action.payload]
       }
     case DELETE_CONTENT:
-      return {}
+      return {
+        ...state,
+        history: state.history.filter((blog) => blog.id !== action.payload)
+      }
   }
 
   return state;
