@@ -1,6 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { BiListPlus } from "react-icons/bi";
+import { MdDeleteForever } from "react-icons/md";
 
 const BlogCart = ({ blog }) => {
+
+  const dispatch = useDispatch();
+  const pathname = window.location.pathname;
+
   return (
     <div className="rounded-md shadow-md sm:w-96 ">
       <div className="flex items-center justify-between p-3">
@@ -39,6 +46,35 @@ const BlogCart = ({ blog }) => {
       <div className="p-3">
         <h2 className="text-lg font-semibold leading-none">{blog?.title}</h2>
         <p>{blog?.description?.slice(0, 100)}</p>
+      </div>
+      <div className='flex gap-2 mt-5'>
+        {!pathname.includes("cart") && (
+          <button
+            onClick={() => dispatch(addToCart(blog))}
+            className='bg-indigo-500 rounded-full py-1 px-2 flex-1 text-white text-bold'
+          >
+            Reading History
+          </button>
+        )}
+
+        {!pathname.includes("cart") && (
+          <button
+            title='Add to wishlist'
+            className='bg-indigo-500  py-1 px-2 rounded-full'
+          >
+            <BiListPlus className='text-white' />
+          </button>
+        )}
+        {pathname.includes("cart") && (
+          <button
+            title='Remove'
+            onClick={() => dispatch(removeFromCart(blog))}
+            className='flex justify-between px-3 bg-red-500 text-white p-1 rounded-full flex-1'
+          >
+            <p>Remove</p>
+            <MdDeleteForever size='25' />
+          </button>
+        )}
       </div>
     </div>
   );
