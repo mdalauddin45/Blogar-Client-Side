@@ -2,9 +2,11 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { BiListPlus } from "react-icons/bi";
 import { MdDeleteForever } from "react-icons/md";
+import { addContent, deleteContent } from "../redux/actions/blogAction";
+import { ADD_CONTENT } from "../redux/actionTypes/actionTypes";
+
 
 const BlogCart = ({ blog }) => {
-
   const dispatch = useDispatch();
   const pathname = window.location.pathname;
 
@@ -50,8 +52,8 @@ const BlogCart = ({ blog }) => {
       <div className='flex gap-2 mt-5'>
         {!pathname.includes("cart") && (
           <button
-            onClick={() => dispatch(addToCart(blog))}
-            className='bg-indigo-500 rounded-full py-1 px-2 flex-1 text-white text-bold'
+            onClick={() => dispatch({ type: ADD_CONTENT, payload: blog })}
+            className='bg-red-500 rounded-full py-1 px-2 flex-1 text-white text-bold'
           >
             Reading History
           </button>
@@ -60,7 +62,7 @@ const BlogCart = ({ blog }) => {
         {!pathname.includes("cart") && (
           <button
             title='Add to wishlist'
-            className='bg-indigo-500  py-1 px-2 rounded-full'
+            className='bg-red-500   py-1 px-2 rounded-full'
           >
             <BiListPlus className='text-white' />
           </button>
@@ -68,7 +70,7 @@ const BlogCart = ({ blog }) => {
         {pathname.includes("cart") && (
           <button
             title='Remove'
-            onClick={() => dispatch(removeFromCart(blog))}
+            onClick={() => dispatch(deleteContent(blog))}
             className='flex justify-between px-3 bg-red-500 text-white p-1 rounded-full flex-1'
           >
             <p>Remove</p>

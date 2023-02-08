@@ -1,7 +1,8 @@
-import { ADD_CONTENT } from "../actionTypes/actionTypes";
+import { ADD_CONTENT, DELETE_CONTENT } from "../actionTypes/actionTypes";
 
 const initialstate = {
-  blogs: "BLOGS",
+  cart: [],
+  // blog: [],
 };
 
 const blogReducer = (state = initialstate, action) => {
@@ -13,6 +14,8 @@ const blogReducer = (state = initialstate, action) => {
         ...state,
         cart: [...state.cart, action.payload]
       }
+    case DELETE_CONTENT:
+      return {}
   }
 
   return state;

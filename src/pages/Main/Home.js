@@ -11,6 +11,7 @@ const Home = () => {
   }, []);
   // console.log(blogs);
   const state = useSelector((state) => state);
+  console.log(state);
 
   const activeClass = "text-white  bg-red-500 border-white";
   return (
