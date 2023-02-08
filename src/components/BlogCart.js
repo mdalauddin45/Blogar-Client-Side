@@ -50,7 +50,7 @@ const BlogCart = ({ blog }) => {
         <p>{blog?.description?.slice(0, 100)}</p>
       </div>
       <div className='flex gap-2 mt-5'>
-        {!pathname.includes("cart") && (
+        {!pathname.includes("history") && (
           <button
             onClick={() => dispatch(addContent(blog))}
             className='bg-red-500 rounded-full py-1 px-2 flex-1 text-white text-bold'
@@ -59,7 +59,7 @@ const BlogCart = ({ blog }) => {
           </button>
         )}
 
-        {!pathname.includes("cart") && (
+        {!pathname.includes("history") && (
           <button
             title='Add to wishlist'
             className='bg-red-500   py-1 px-2 rounded-full'
@@ -67,7 +67,7 @@ const BlogCart = ({ blog }) => {
             <BiListPlus className='text-white' />
           </button>
         )}
-        {pathname.includes("cart") && (
+        {pathname.includes("history") && (
           <button
             title='Remove'
             onClick={() => dispatch(deleteContent(blog))}

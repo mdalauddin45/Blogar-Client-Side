@@ -1,8 +1,7 @@
 import { ADD_CONTENT, DELETE_CONTENT } from "../actionTypes/actionTypes";
 
 const initialstate = {
-  cart: [],
-  // blog: [],
+  history: [],
 };
 
 const blogReducer = (state = initialstate, action) => {
@@ -12,7 +11,7 @@ const blogReducer = (state = initialstate, action) => {
     case ADD_CONTENT:
       return {
         ...state,
-        cart: [...state.cart, action.payload]
+        history: [...state.history, action.payload]
       }
     case DELETE_CONTENT:
       return {}
