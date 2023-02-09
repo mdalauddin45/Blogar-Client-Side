@@ -23,7 +23,7 @@ const AddBlog = () => {
     };
 
     return (
-        <div className='flex justify-center items-center h-full '>
+        <div >
             <form
                 className='shadow-lg p-10 rounded-md flex flex-wrap gap-3 max-w-3xl justify-between bg-white'
                 onSubmit={handleSubmit(submit)}

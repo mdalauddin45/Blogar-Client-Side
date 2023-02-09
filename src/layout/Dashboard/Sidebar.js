@@ -1,19 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AdminMenu from "./AdminMenu";
 
 const Sidebar = () => {
   return (
-    <div className='col-span-2 bg-indigo-200 h-[calc(100vh-25px)] p-5 rounded-lg'>
+    <div className='col-span-2  p-5 '>
       <ul className='flex gap-3  flex-col h-full'>
         <li>Admin Dashboard</li>
         <li>
-          <Link to='/dashboard'>Blog List</Link>
-        </li>
-        <li>
-          <Link to='add-blog'> Add Blog </Link>
-        </li>
-        <li className='mt-auto'>
-          <Link to='/'> Back to Home </Link>
+          <AdminMenu />
         </li>
       </ul>
     </div>

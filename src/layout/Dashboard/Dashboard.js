@@ -4,9 +4,9 @@ import Sidebar from "./Sidebar";
 
 const Dashboard = () => {
   return (
-    <div className='grid grid-cols-12 p-3 gap-3 '>
+    <div className='relative min-h-screen md:flex lg:flex lg:py-20'>
       <Sidebar />
-      <div className='col-span-10 w-full bg-gray-100 rounded-lg'>
+      <div className='col-span-10 w-full'>
         <Outlet />
       </div>
     </div>

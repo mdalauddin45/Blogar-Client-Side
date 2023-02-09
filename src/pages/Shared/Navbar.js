@@ -20,13 +20,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/post">Post</Link>
-        </li>
-        <li>
-          <Link to="/megamenu">Mega Menu</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
         <Link to="/history">
           <li title="history" className="bg-red-500 p-2 rounded-full">
@@ -35,12 +29,7 @@ const Navbar = () => {
 
           </li>
         </Link>
-        <Link to="/cart">
-          <li title="cart" className="bg-red-500 p-2 rounded-full">
 
-            <BsFillCartFill className="text-white " />
-
-          </li> </Link>
       </ul>
     </nav>
   );
