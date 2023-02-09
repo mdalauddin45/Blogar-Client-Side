@@ -1,4 +1,4 @@
-import { TOGGLE_BRAND, TOGGLE_CATEGORY, TOGGLE_STOCK } from "../actionTypes/actionTypes";
+import { TOGGLE_CATEGORY, } from "../actionTypes/actionTypes";
 
 
 export const toggleBrand = (brandName) => {

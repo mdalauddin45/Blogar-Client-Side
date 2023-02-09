@@ -21,9 +21,11 @@ const blogReducer = (state = initialstate, action) => {
         ...state,
         history: state.history.filter((blog) => blog._id !== action.payload._id)
       }
+    default:
+      return state;
   }
 
-  return state;
+
 };
 
 export default blogReducer;
