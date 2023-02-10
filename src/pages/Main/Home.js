@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BlogCart from "../../components/BlogCart";
-import { getContent } from "../../redux/actions/blogAction";
 import { toggleBrand } from "../../redux/actions/filterAction"
+import fetchBlog from "../../redux/thunk/blogs/fetchblogs";
 const Home = () => {
-  const [blogs, setBlogs] = React.useState([]);
-  React.useEffect(() => {
-    fetch("http://localhost:5000/blogs")
-      .then((res) => res.json())
-      .then((data) => dispatch(getContent(data)));
-  }, []);
-  console.log(blogs);
-  const filters = useSelector((state) => state.filters.filters);
-  const { categoris, apps } = filters;
-
   const dispatch = useDispatch();
+  const filters = useSelector((state) => state.filters.filters);
+  const blogs = useSelector((state) => state.history.history);
+  useEffect(() => {
+    dispatch(fetchBlog());
+  }, [dispatch]);
+
+
+  const { categoris } = filters;
+
   const activeClass = "text-white  bg-red-500 border-white";
   let content;
   if (blogs.length) {

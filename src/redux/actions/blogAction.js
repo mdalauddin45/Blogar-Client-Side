@@ -1,9 +1,9 @@
 import { ADD_CONTENT, DELETE_CONTENT, GET_CONTENT } from "../actionTypes/actionTypes"
 
-export const getContent = (blog) => {
+export const getContent = (history) => {
     return {
         type: GET_CONTENT,
-        payload: blog
+        payload: history
     }
 }
 
