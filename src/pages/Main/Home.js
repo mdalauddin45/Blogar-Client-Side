@@ -1,19 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BlogCart from "../../components/BlogCart";
-import { toggleBrand, toggleStock } from "../../redux/actions/filterAction";
-import { TOGGLE_FIRST, TOGGLE_LAST } from "../../redux/actionTypes/actionTypes";
-
+import { getContent } from "../../redux/actions/blogAction";
+import { toggleBrand } from "../../redux/actions/filterAction"
 const Home = () => {
   const [blogs, setBlogs] = React.useState([]);
   React.useEffect(() => {
-    fetch("blog.json")
+    fetch("http://localhost:5000/blogs")
       .then((res) => res.json())
-      .then((data) => setBlogs(data));
+      .then((data) => dispatch(getContent(data)));
   }, []);
-  // console.log(blogs);
+  console.log(blogs);
   const filters = useSelector((state) => state.filters.filters);
-  console.log(filters);
   const { categoris, apps } = filters;
 
   const dispatch = useDispatch();

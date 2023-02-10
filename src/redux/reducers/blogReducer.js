@@ -1,4 +1,4 @@
-import { ADD_CONTENT, DELETE_CONTENT } from "../actionTypes/actionTypes";
+import { ADD_CONTENT, DELETE_CONTENT, GET_CONTENT } from "../actionTypes/actionTypes";
 
 const initialstate = {
   history: [],
@@ -6,8 +6,13 @@ const initialstate = {
 
 const blogReducer = (state = initialstate, action) => {
   const selectedBlog = state.history.find((blog) => blog._id === action.payload._id);
-
   switch (action.type) {
+
+    case GET_CONTENT:
+      return {
+        ...state,
+        history: action.payload,
+      };
     case ADD_CONTENT:
       if (selectedBlog) {
         return state

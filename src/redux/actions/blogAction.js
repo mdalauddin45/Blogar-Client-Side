@@ -1,5 +1,11 @@
-import { ADD_CONTENT, DELETE_CONTENT } from "../actionTypes/actionTypes"
+import { ADD_CONTENT, DELETE_CONTENT, GET_CONTENT } from "../actionTypes/actionTypes"
 
+export const getContent = (blog) => {
+    return {
+        type: GET_CONTENT,
+        payload: blog
+    }
+}
 
 export const addContent = (blog) => {
     return {
