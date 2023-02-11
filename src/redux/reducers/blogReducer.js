@@ -1,7 +1,8 @@
-import { ADD_HISTORY, DELETE_CONTENT, GET_CONTENT } from "../actionTypes/actionTypes";
+import { ADD_TO_HISTORY, REMOVE_FROM_HISTORY, GET_CONTENT } from "../actionTypes/actionTypes";
 
 const initialstate = {
   history: [],
+  blogs: [],
 };
 
 const blogReducer = (state = initialstate, action) => {
@@ -13,15 +14,12 @@ const blogReducer = (state = initialstate, action) => {
         ...state,
         history: action.payload,
       };
-    case ADD_HISTORY:
-      if (selectedBlog) {
-        return state
-      }
+    case ADD_TO_HISTORY:
       return {
         ...state,
-        history: [...state.history, action.payload]
-      }
-    case DELETE_CONTENT:
+        history: [...state.history, action.payload],
+      };
+    case REMOVE_FROM_HISTORY:
       return {
         ...state,
         history: state.history.filter((blog) => blog._id !== action.payload._id)

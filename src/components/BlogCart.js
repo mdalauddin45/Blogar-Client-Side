@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { BiListPlus } from "react-icons/bi";
 import { MdDeleteForever } from "react-icons/md";
-import { addHistory, deleteContent } from "../redux/actions/blogAction";
+import { addHistory, removeFromHistory } from "../redux/actions/blogAction";
 
 
 const BlogCart = ({ blog }) => {
@@ -69,7 +69,7 @@ const BlogCart = ({ blog }) => {
         {pathname.includes("history") && (
           <button
             title='Remove'
-            onClick={() => dispatch(deleteContent(blog))}
+            onClick={() => dispatch(removeFromHistory(blog))}
             className='flex justify-between px-3 bg-red-500 text-white p-1 rounded-full flex-1'
           >
             <p>Remove</p>
