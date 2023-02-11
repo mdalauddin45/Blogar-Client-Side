@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { BiListPlus } from "react-icons/bi";
 import { MdDeleteForever } from "react-icons/md";
 import { addHistory, deleteContent } from "../redux/actions/blogAction";
-import { ADD_HISTORY } from "../redux/actionTypes/actionTypes";
 
 
 const BlogCart = ({ blog }) => {
