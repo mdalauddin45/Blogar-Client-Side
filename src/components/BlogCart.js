@@ -2,8 +2,8 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { BiListPlus } from "react-icons/bi";
 import { MdDeleteForever } from "react-icons/md";
-import { addContent, deleteContent } from "../redux/actions/blogAction";
-import { ADD_CONTENT } from "../redux/actionTypes/actionTypes";
+import { addHistory, deleteContent } from "../redux/actions/blogAction";
+import { ADD_HISTORY } from "../redux/actionTypes/actionTypes";
 
 
 const BlogCart = ({ blog }) => {
@@ -52,7 +52,7 @@ const BlogCart = ({ blog }) => {
       <div className='flex gap-2 mt-5'>
         {!pathname.includes("history") && (
           <button
-            onClick={() => dispatch(addContent(blog))}
+            onClick={() => dispatch(addHistory(blog))}
             className='bg-red-500 rounded-full py-1 px-2 flex-1 text-white text-bold'
           >
             Reading History

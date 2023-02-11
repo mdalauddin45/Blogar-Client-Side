@@ -1,4 +1,4 @@
-import { ADD_CONTENT, DELETE_CONTENT, GET_CONTENT } from "../actionTypes/actionTypes"
+import { ADD_HISTORY, DELETE_CONTENT, GET_CONTENT } from "../actionTypes/actionTypes"
 
 export const getContent = (history) => {
     return {
@@ -7,9 +7,9 @@ export const getContent = (history) => {
     }
 }
 
-export const addContent = (blog) => {
+export const addHistory = (blog) => {
     return {
-        type: ADD_CONTENT,
+        type: ADD_HISTORY,
         payload: blog
     }
 }

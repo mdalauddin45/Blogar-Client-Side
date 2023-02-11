@@ -1,15 +1,31 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BlogCart from "../../components/BlogCart";
+import { getContent } from "../../redux/actions/blogAction";
+
 import { toggleBrand } from "../../redux/actions/filterAction"
+import { GET_CONTENT } from "../../redux/actionTypes/actionTypes";
 import fetchBlog from "../../redux/thunk/blogs/fetchblogs";
+// import fetchBlog from "../../redux/thunk/blogs/fetchblogs";
 const Home = () => {
   const dispatch = useDispatch();
   const filters = useSelector((state) => state.filters.filters);
   const blogs = useSelector((state) => state.history.history);
+  console.log(blogs);
   useEffect(() => {
-    dispatch(fetchBlog());
+    fetch("http://localhost:5000/blogs")
+      .then(res => res.json())
+      .then(data => dispatch({
+        type: GET_CONTENT,
+        payload: data
+      }))
   }, [dispatch]);
+  console.log(fetchBlog(getContent()))
+  // i wanna dispatch this action but i get error
+  // how to dispatch this action
+  // dispatch(fetchBlog(getContent()))
+
+
 
 
   const { categoris } = filters;
