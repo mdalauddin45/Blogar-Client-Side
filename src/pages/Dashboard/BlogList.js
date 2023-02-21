@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import fetchBlog from "../../redux/thunk/blogs/fetchblogs";
 
 const BlogList = () => {
-    const [blogs, setBlogs] = useState([]);
+    const blogs = useSelector((state) => state.history.blogs);
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch("blog.json")
-            .then((res) => res.json())
-            .then((data) => setBlogs(data));
-    });
+        dispatch(fetchBlog())
+    }, [dispatch]);
+
 
 
     return (
