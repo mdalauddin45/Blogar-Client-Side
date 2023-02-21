@@ -12,7 +12,7 @@ const blogReducer = (state = initialstate, action) => {
     case GET_CONTENT:
       return {
         ...state,
-        history: action.payload,
+        blogs: action.payload,
       };
     case ADD_TO_HISTORY:
       return {

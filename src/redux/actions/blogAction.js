@@ -35,10 +35,10 @@ export const updateContent = (data) => {
     }
 }
 
-export const addHistory = (blog) => {
+export const addHistory = (blogs) => {
     return {
         type: ADD_TO_HISTORY,
-        payload: blog
+        payload: blogs
     }
 }
 

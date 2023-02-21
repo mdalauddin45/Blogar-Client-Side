@@ -4,8 +4,8 @@ import BlogCart from '../../components/BlogCart';
 
 const History = () => {
 
-
     const history = useSelector(state => state.history.history);
+    console.log(useSelector(state => state.history))
 
 
     return (

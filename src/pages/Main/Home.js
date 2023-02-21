@@ -10,7 +10,7 @@ import fetchBlog from "../../redux/thunk/blogs/fetchblogs";
 const Home = () => {
   const dispatch = useDispatch();
   const filters = useSelector((state) => state.filters.filters);
-  const blogs = useSelector((state) => state.history.history);
+  const blogs = useSelector((state) => state.history.blogs);
   useEffect(() => {
     dispatch(fetchBlog())
   }, [dispatch]);
