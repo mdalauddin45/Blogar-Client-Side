@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BlogCart from "../../components/BlogCart";
-import { getContent } from "../../redux/actions/blogAction";
-
 import { toggleBrand } from "../../redux/actions/filterAction"
-import { GET_CONTENT } from "../../redux/actionTypes/actionTypes";
 import fetchBlog from "../../redux/thunk/blogs/fetchblogs";
 
 const Home = () => {

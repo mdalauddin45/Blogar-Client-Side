@@ -2,10 +2,12 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import addBlogData from "../../redux/thunk/blogs/addBlogData";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const AddBlog = () => {
     const { register, handleSubmit } = useForm();
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     const submit = (data) => {
         const blog = {
@@ -15,8 +17,8 @@ const AddBlog = () => {
             description: data.description,
             data: new Date().toLocaleDateString(),
         };
-        console.log(blog);
         dispatch(addBlogData(blog));
+        navigate("/");
     };
 
     return (

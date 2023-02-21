@@ -1,4 +1,4 @@
-import { ADD_TO_HISTORY, REMOVE_FROM_HISTORY, GET_CONTENT, ADD_CONTENT } from "../actionTypes/actionTypes";
+import { ADD_TO_HISTORY, REMOVE_FROM_HISTORY, GET_CONTENT, ADD_CONTENT, DELETE_CONTENT } from "../actionTypes/actionTypes";
 
 const initialstate = {
   history: [],
