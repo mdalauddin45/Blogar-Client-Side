@@ -3,7 +3,7 @@ import { getContent } from "../../actions/blogAction";
 
 const fetchBlog = () => {
     return async (dispatch, getState) => {
-        const res = await fetch("http://localhost:5000/blogs");
+        const res = await fetch("https://server-chi-eight.vercel.app/blogs");
         const data = await res.json();
 
         if (data.length) {

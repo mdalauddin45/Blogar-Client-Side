@@ -4,7 +4,7 @@ const deleteBlog = (id) => {
     // console.log(id)
 
     return async (dispatch) => {
-        const res = await fetch(`http://localhost:5000/blogs/${id}`, {
+        const res = await fetch(`https://server-chi-eight.vercel.app/blogs/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-type": "application/json",
