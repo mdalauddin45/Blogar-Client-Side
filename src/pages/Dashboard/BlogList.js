@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { deleteContent } from "../../redux/actions/blogAction";
+import deleteBlog from "../../redux/thunk/blogs/deleteBlog";
 import fetchBlog from "../../redux/thunk/blogs/fetchblogs";
 
 const BlogList = () => {
@@ -10,6 +12,7 @@ const BlogList = () => {
     useEffect(() => {
         dispatch(fetchBlog())
     }, [dispatch]);
+
 
 
 
@@ -54,7 +57,7 @@ const BlogList = () => {
 
                                     <td className='p-2'>
                                         <div className='flex justify-center'>
-                                            <button>
+                                            <button onClick={() => dispatch(deleteBlog(blog._id))}>
                                                 <svg
                                                     className='w-8 h-8 hover:text-red-500 rounded-full hover:bg-gray-100 p-1'
                                                     fill='none'

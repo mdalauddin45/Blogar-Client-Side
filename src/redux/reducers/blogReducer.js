@@ -14,12 +14,22 @@ const blogReducer = (state = initialstate, action) => {
         ...state,
         blogs: [...state.blogs, action.payload],//immutable way
       };
+    case DELETE_CONTENT:
+      return {
+        ...state,
+        blogs: state.blogs.filter(
+          (blog) => blog._id !== action.payload
+        ),
+      }
     case GET_CONTENT:
       return {
         ...state,
         blogs: action.payload,
       };
     case ADD_TO_HISTORY:
+      if (selectedBlog) {
+        return state
+      }
       return {
         ...state,
         history: [...state.history, action.payload],
