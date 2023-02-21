@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteContent } from "../../redux/actions/blogAction";
 import deleteBlog from "../../redux/thunk/blogs/deleteBlog";
 import fetchBlog from "../../redux/thunk/blogs/fetchblogs";
 
 const BlogList = () => {
     const blogs = useSelector((state) => state.history.blogs);
+    console.log(blogs);
 
     const dispatch = useDispatch();
 

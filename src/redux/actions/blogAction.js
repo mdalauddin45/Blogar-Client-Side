@@ -15,6 +15,7 @@ export const getContent = (data) => {
 }
 
 export const deleteContent = (id) => {
+    console.log(id)
     return {
         type: DELETE_CONTENT,
         payload: id
